@@ -27,11 +27,12 @@ export default function Home() {
     let canceled = false;
 
     function update() {
-      setRockerTime(whenIsNextRockerTime().getTime() - Date.now());
+      const timeRemaining = whenIsNextRockerTime().getTime() - Date.now();
+      setRockerTime(timeRemaining);
       const now = new Date();
       setIsRockerTime(now.getHours() == 19 && now.getMinutes() == 4);
 
-      document.title = `${ms(2, { long: true })} until rocker time`;
+      document.title = `${ms(timeRemaining, { long: true })} until rocker time`;
 
       if (!canceled) setTimeout(update, 1000);
     }
