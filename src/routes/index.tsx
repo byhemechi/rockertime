@@ -34,7 +34,7 @@ export default function Home() {
 
       document.title = `${ms(timeRemaining, { long: true })} until rocker time`;
 
-      if (!canceled) setTimeout(update, 1000);
+      if (!canceled) requestAnimationFrame(update);
     }
 
     requestAnimationFrame(update);
@@ -59,7 +59,7 @@ export default function Home() {
           stroke-dashoffset={`${(1 - rockerTime() / day) * c}px`}
           fill="transparent"
           stroke-linecap="round"
-          class="text-blue-600 transition-all -rotate-90"
+          class="text-blue-600 -rotate-90"
           stroke="currentcolor"
         />
       </svg>
