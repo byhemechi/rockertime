@@ -50,7 +50,13 @@ export default function Home() {
   ) : (
     <main class="h-full w-full flex items-center justify-center flex-col gap-2">
       <svg class="w-80 h-80 absolute" viewBox="-60 -60 120 120">
-        <circle r={45} stroke-width={2} fill="transparent" stroke="#0001" />
+        <circle
+          r={45}
+          stroke-width={2}
+          fill="transparent"
+          stroke="currentColor"
+          opacity={0.1}
+        />
         <circle
           r={r}
           stroke-width={2}

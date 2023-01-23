@@ -32,7 +32,7 @@ export default function Root() {
           content="Tracks the time until the most important minute of the day"
         />
       </Head>
-      <Body>
+      <Body class="bg-white dark:bg-neutral-900 text-black dark:text-white">
         <Suspense>
           <ErrorBoundary>
             <Routes>
