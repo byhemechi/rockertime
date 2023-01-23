@@ -27,6 +27,10 @@ export default function Root() {
         <Title>Rocker time</Title>
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta
+          name="description"
+          content="Tracks the time until the most important minute of the day"
+        />
       </Head>
       <Body>
         <Suspense>
