@@ -1,5 +1,6 @@
 import { createEffect, createSignal } from "solid-js";
 import ms from "ms";
+import { Title } from "solid-start";
 
 function whenIsNextRockerTime() {
   const rockertime = new Date();
@@ -32,8 +33,6 @@ export default function Home() {
       const now = new Date();
       setIsRockerTime(now.getHours() == 19 && now.getMinutes() == 4);
 
-      document.title = `${ms(timeRemaining, { long: true })} until rocker time`;
-
       if (!canceled) requestAnimationFrame(update);
     }
 
@@ -63,6 +62,7 @@ export default function Home() {
           stroke="currentcolor"
         />
       </svg>
+      <Title>{ms(rockerTime(), { long: true })} until rocker time</Title>
       <div class="text-4xl">{ms(rockerTime(), { long: true })}</div>
       <div class="relative text-lg"> until rocker time</div>
     </main>
